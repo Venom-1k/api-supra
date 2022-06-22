@@ -479,7 +479,7 @@ router.get('/nickff', async (req, res, next) => {
         var Apikey = req.query.apikey;
 if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){    
-   hasil = 'https://supra-api.herokuapp.com/api/nickff?text=Supra&apikey=supraz'
+   hasil = 'https://supra-api.herokuapp.com/api/nickff?text=' + text +'&apikey=supraz'
 	  data = await fetch(hasil).then(v => v.buffer())   
   
          await fs.writeFileSync(__path +'/tmp/attp1.webp',data)
