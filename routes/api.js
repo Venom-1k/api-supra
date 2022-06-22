@@ -489,6 +489,21 @@ res.json(loghandler.invalidKey)
 }    
 })
 
+router.get('/ip', async (req, res, next) => {
+       text = req.query.text
+        var Apikey = req.query.apikey;
+if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){    
+   hasil = 'http://ip-api.com/json/' + text + '?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,offset,currency,isp,org,as,asname,reverse,mobile,proxy,hosting,query'
+	  data = await fetch(hasil).then(v => v.buffer())   
+  
+         await fs.writeFileSync(__path +'/tmp/attp1.webp',data)
+        res.sendFile(__path+'/tmp/attp1.webp')
+             } else {
+res.json(loghandler.invalidKey)
+}    
+})
+
 router.get('/pessoa', async (req, res, next) => {
        text = req.query.text
         var Apikey = req.query.apikey;
