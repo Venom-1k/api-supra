@@ -479,7 +479,7 @@ router.get('/fancytext', async (req, res, next) => {
         var Apikey = req.query.apikey;
 if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){    
-   hasil = 'https://brizas-api.herokuapp.com/gerador/fancytext?apikey=brizaloka&text=' + text +'
+   hasil = 'https://brizas-api.herokuapp.com/gerador/fancytext?apikey=brizaloka&text=' + text + ''
 	  data = await fetch(hasil).then(v => v.buffer())   
   
          await fs.writeFileSync(__path +'/tmp/attp1.webp',data)
