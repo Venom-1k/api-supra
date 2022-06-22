@@ -489,6 +489,21 @@ res.json(loghandler.invalidKey)
 }    
 })
 
+router.get('/identidade', async (req, res, next) => {
+       text = req.query.text
+        var Apikey = req.query.apikey;
+if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){    
+   hasil = 'https://brizas-api.herokuapp.com/gerador/pessoa?apikey=brizaloka'
+	  data = await fetch(hasil).then(v => v.buffer())   
+  
+         await fs.writeFileSync(__path +'/tmp/attp1.webp',data)
+        res.sendFile(__path+'/tmp/attp1.webp')
+             } else {
+res.json(loghandler.invalidKey)
+}    
+})
+
 router.get('/attp2', async (req, res, next) => {
        text = req.query.text
          var Apikey = req.query.apikey;
