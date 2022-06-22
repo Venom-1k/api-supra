@@ -15,7 +15,7 @@ router.get('/config', (req, res) => {
         status: true,
         result: {
             prefix : '/',
-            namabot: 'Evoluti9nBot',
+            namabot: 'EvolutionBot',
             namaowner: 'Venom',
             instagram: 'Venom-ofc',
             youtube : 'Venom Mods'
