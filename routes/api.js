@@ -489,7 +489,7 @@ res.json(loghandler.invalidKey)
 }    
 })
 
-router.get('/gerador', async (req, res, next) => {
+router.get('/pessoa', async (req, res, next) => {
        text = req.query.text
         var Apikey = req.query.apikey;
 if(!Apikey) return res.json(loghandler.notparam)
