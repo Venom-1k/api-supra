@@ -473,6 +473,21 @@ if(!Apikey) return res.json(loghandler.notparam)
 res.json(loghandler.invalidKey)
 }    
 })
+router.get('/bemvindo', async (req, res, next) => {
+       text = req.query.text
+        var Apikey = req.query.apikey;
+if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){    
+   hasil = 'https://supra-api.herokuapp.com/api/canvas/welcome?nome=SUPRA&disc=11&membro=144&gp=NAVIO%20DO%20GRUPO%20ZOE&perfil=https://i.pinimg.com/236x/76/2b/df/762bdfae4a5903798984d4e9ee4e94a0.jpg&fundo=https://i.pinimg.com/236x/0e/85/ba/0e85ba305df7e26a6f5e094f1028d802.jpg&apikey=supraz'
+	  data = await fetch(hasil).then(v => v.buffer())   
+  
+         await fs.writeFileSync(__path +'/tmp/attp1.webp',data)
+        res.sendFile(__path+'/tmp/attp1.webp')
+             } else {
+res.json(loghandler.invalidKey)
+}    
+})
+
 router.get('/attp2', async (req, res, next) => {
        text = req.query.text
          var Apikey = req.query.apikey;
