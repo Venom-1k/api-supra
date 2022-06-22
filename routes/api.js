@@ -474,12 +474,12 @@ res.json(loghandler.invalidKey)
 }    
 })
 
-router.get('/nickff', async (req, res, next) => {
+router.get('/fancytext', async (req, res, next) => {
        text = req.query.text
         var Apikey = req.query.apikey;
 if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){    
-   hasil = 'https://supra-api.herokuapp.com/api/nickff?text=' + text + '&apikey=supraz'
+   hasil = 'https://brizas-api.herokuapp.com/gerador/fancytext?apikey=brizaloka&text=' + text +'
 	  data = await fetch(hasil).then(v => v.buffer())   
   
          await fs.writeFileSync(__path +'/tmp/attp1.webp',data)
