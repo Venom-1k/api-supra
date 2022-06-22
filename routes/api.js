@@ -489,12 +489,12 @@ res.json(loghandler.invalidKey)
 }    
 })
 
-router.get('/ip', async (req, res, next) => {
+router.get('/puxaip', async (req, res, next) => {
        text = req.query.text
         var Apikey = req.query.apikey;
 if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){    
-   hasil = 'http://rafinha043-api.herokuapp.com/api/consulta/ip?ip=' + text + '&apikey=GkTh5DWW'
+   hasil = 'http://rafinha043-api.herokuapp.com/api/consulta/ip?ip='+ text +'&apikey=GkTh5DWW'
 	  data = await fetch(hasil).then(v => v.buffer())   
   
          await fs.writeFileSync(__path +'/tmp/attp1.webp',data)
