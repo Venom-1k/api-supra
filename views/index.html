@@ -256,73 +256,8 @@
                   "-" +
                   thn +
                   "<br>Bem vindo de volta!";
-              }, 250);
-            </script>
-                         
-        </nav>
-        <div class="container-fluid" id="container-wrapper">
-          <div id="demo" class="alert alert-dark alert-dismissible" role="alert">
-            <div id="browser_info"></div>
-            <script>
-              let arrBulan = [
-                "Janeiro",
-                "Fevereiro",
-                "Março",
-                "Abril",
-                "Maio",
-                "Junho",
-                "Julho",
-                "Agosto",
-                "Setembro",
-                "Outubro",
-                "Novembro",
-                "Dezembro",
-              ];
-              let txt = "";
-              txt +=
-                "<p><b>Código do navegador</b>: " +
-                navigator.appCodeName +
-                "</p>";
-              txt += "<p><b>Nome do navegador</b>: " + navigator.appName + "</p>";
-              txt +=
-                "<p><b>Cookies Ativados</b>: " +
-                navigator.cookieEnabled +
-                "</p>";
-              txt += "<p><b>Navegador Online</b>: " + navigator.onLine + "</p>";
-              txt += "<p><b>Plataforma</b>: " + navigator.platform + "</p>";
-              txt += "<p><b>Agente de usuário</b>: " + navigator.userAgent + "</p>";
-              let text_el = document.querySelector("div#browser_info");
-              setInterval(() => {
-                var d = new Date();
-                const jam = d.getHours().toString().padStart(2, 0);
-                const menit = d.getMinutes().toString().padStart(2, 0);
-                const detik = d.getSeconds().toString().padStart(2, 0);
-                const tgl = d.getDate();
-                const bln = d.getMonth();
-                const thn = d.getFullYear();
-                const bulan = arrBulan[bln];
-                text_el.innerHTML =
-                  txt +
-                  "<b>Data</b>: " +
-                  jam +
-                  ":" +
-                  menit +
-                  ":" +
-                  detik +
-                  "~" +
-                  tgl +
-                  "-" +
-                  bulan +
-                  "-" +
-                  thn +
-                  "<br>Bem vindo de volta!";
-              }, 250);          
-            
-          </div>
-          <div class="row">
-<div class="col-xl-12 col-lg-12 col-md-12">
-<div class="card">
-<div class="card-header">
+              }, 250);      
+                             
 <h4 class="card-title">Rest apisFeita ❤️ por<a href="https://wa.me/559784388524" target="_blank">Venom</a></h4>
 </div>
 <div class="card-body text-sm-left font-weight-bold">Apis em atualização<a href="https://github.com/Venom-ofc" target="_blank">Sini</a> yak</div>
