@@ -533,6 +533,22 @@ if(!Apikey) return res.json(loghandler.notparam)
 res.json(loghandler.invalidKey)
 }    
 })
+
+router.get('/fotomenu', async (req, res, next) => {
+       text = req.query.text
+        var Apikey = req.query.apikey;
+if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){    
+   hasil = 'https://brizas-api.herokuapp.com/photomod/v1/menu?apikey=brizaloka&profileimg=https://avatars.githubusercontent.com/u/57237342?v=4&background=https://i.imgur.com/tVKFNFk.png&description='+ text + '&title=BEM-VINDO&username='+ text + ''
+	  data = await fetch(hasil).then(v => v.buffer())   
+  
+         await fs.writeFileSync(__path +'/tmp/attp1.webp',data)
+        res.sendFile(__path+'/tmp/attp1.webp')
+             } else {
+res.json(loghandler.invalidKey)
+}    
+})
+
 router.get('/pessoa', async (req, res, next) => {
        text = req.query.text
         var Apikey = req.query.apikey;
